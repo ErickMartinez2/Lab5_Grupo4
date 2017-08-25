@@ -7,11 +7,14 @@ using namespace std;
 		for (int i = 0;i<Height;i++) {
 			Pointer[i] = new int [Width];
 		}
+		int contador = 1;
 		for (int i = 0;i<Height;i++) {
-			for (int j = 0;i<Width;j++) {
-				int Num;				
+			for (int j = 0;j<Width;j++) {
+				int Num;
+				cout << "Ingrese el " << contador << " valor de la matriz: ";				
 				cin >> Num;
 				Pointer[i][j] = Num;
+				contador++;
 			}
 		}
 	}	
