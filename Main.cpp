@@ -37,7 +37,16 @@ int main() {
 					} break;
 			case 2: {
 					cout << "-> Sumar Matrices" << endl;
-					cout << "" << endl;
+					for (int i = 0; i < matrices.size(); i++) {
+						Matriz* matriz = matrices.at(i);
+						cout << "Matriz #" << i  << endl;
+						for (int j = 0; j < (*matriz).getHeight(); j++) {
+							for (int k = 0; k < (*matriz).getWidth(); k++) {
+								cout << (*matriz)[j][k];
+							}
+							cout << endl;
+						}
+					}
 					} break;
 			case 3: {
 
