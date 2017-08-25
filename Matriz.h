@@ -8,7 +8,8 @@ class Matriz {
 		int Width;
 		int** Pointer;
 	public: 
-		Matriz(int, int);
+		Matriz(int, int, bool);
+		//Matriz(int**);
 		Matriz();
 		~Matriz();
 		void  setHeight(int);
@@ -17,8 +18,9 @@ class Matriz {
 		int getHeight();
 		int getWidth();
 		int** getPointer();
-		/*Matriz operator+(Matriz& Matriz2) {
-			Matriz resp (this->Height, this->Width);
+		int getValor(int, int);
+		Matriz* operator+(Matriz Matriz2) {
+			Matriz* resp = new Matriz(this->getHeight(), this->getWidth(), false);
 			int** a = this->Pointer;
 			int** b = Matriz2.Pointer;
 			int** c = new int*[Height];
@@ -31,10 +33,10 @@ class Matriz {
 					c[i][j] = a[i][j] + b[i][j];
 				}
 			}
-			resp.setPointer(c);
+			(*resp).setPointer(c);
 			return resp;
 		}
-		Matriz operator-(Matriz& Matriz2) {
+		/*Matriz operator-(Matriz& Matriz2) {
 			Matriz resp(this->Height, this->Width);
 			if (true) {
 				int** a = this->Pointer;

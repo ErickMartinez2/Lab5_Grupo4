@@ -31,22 +31,37 @@ int main() {
 						cout << "Ingrese el numero de columnas de la matriz: ";
 						int columnas;
 						cin >> columnas;
-						Matriz* matriz = new Matriz(filas, columnas);
+						Matriz* matriz = new Matriz(filas, columnas, true);
 						matrices.push_back(matriz);
 						cout << "Matriz Creada!" << endl;
 					} break;
 			case 2: {
-					cout << "-> Sumar Matrices" << endl;
-					for (int i = 0; i < matrices.size(); i++) {
-						Matriz* matriz = matrices.at(i);
-						cout << "Matriz #" << i  << endl;
-						for (int j = 0; j < (*matriz).getHeight(); j++) {
-							for (int k = 0; k < (*matriz).getWidth(); k++) {
-								cout << (*matriz)[j][k];
+						cout << "-> Sumar Matrices" << endl;
+						for (int i = 0; i < matrices.size(); i++) {
+							Matriz* matriz = matrices.at(i);
+							cout << "Matriz #" << i  << endl;
+							for (int j = 0; j < (*matriz).getHeight(); j++) {
+								for (int k = 0; k < (*matriz).getWidth(); k++) {
+									cout << "{" << (*matriz).getValor(j, k) << "}";
+								}
+								cout << endl;
+							}
+						}
+						cout << "Ingrese el numero de la primera matriz: ";
+						int opcion_matriz1;
+						cin >> opcion_matriz1;
+						cout << "Ingrese el numero de la segunda matriz: ";
+						int opcion_matriz2;
+						cin >> opcion_matriz2;
+						Matriz* matriz2 = *matrices.at(opcion_matriz1) + *matrices.at(opcion_matriz2);
+						cout << endl;
+						for (int j = 0; j < (*matriz2).getHeight(); j++) {
+							for (int k = 0; k < (*matriz2).getWidth(); k++) {
+								cout << "{" << (*matriz2).getValor(j, k) << "}";
 							}
 							cout << endl;
 						}
-					}
+
 					} break;
 			case 3: {
 
@@ -76,3 +91,4 @@ int main() {
 	} while (opcion != 9);
 	return 0;
 }
+
