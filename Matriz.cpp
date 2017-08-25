@@ -4,7 +4,7 @@
 using namespace std;
 
 Matriz::Matriz(int Height, int Width) {
-	this->Pointer = new int*[Height];
+	Pointer = new int*[Height];
 	for (int i = 0;i<Height;i++) {
 		Pointer[i] = new int [Width];
 	}
@@ -46,8 +46,12 @@ int** Matriz::getPointer() {
 
 Matriz::~Matriz() {
 	for (int i = 0; i < Height; i++) {
-		delete[] Pointer[i];
-		Pointer[i] = NULL;
+
+		if (Pointer[i]) {
+			delete Pointer[i];
+		}
+		
+		delete[] Pointer;
+
 	}
-	delete Pointer;
 }

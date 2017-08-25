@@ -6,8 +6,9 @@ using namespace std;
 
 int main() {
 	int opcion;
-	vector<Matriz> matrices;
+	vector<Matriz*> matrices;
 	do {
+		cout << endl;
 		cout << "*** Calculadora Matricial ***" << endl
 			<< "1. Crear Matrices" << endl
 			<< "2. Sumar Matrices" << endl
@@ -19,7 +20,7 @@ int main() {
 			<< "8. Inversa" << endl
 			<< "9. Salir" << endl
 			<< "Ingrese su opcion: ";
-		cin >> oipcion;
+		cin >> opcion;
 		cout << endl;
 		switch (opcion) {
 			case 1: {
@@ -30,12 +31,13 @@ int main() {
 						cout << "Ingrese el numero de columnas de la matriz: ";
 						int columnas;
 						cin >> columnas;
-						Matriz matriz(filas, columnas);
+						Matriz* matriz = new Matriz(filas, columnas);
 						matrices.push_back(matriz);
 						cout << "Matriz Creada!" << endl;
 					} break;
 			case 2: {
-
+					cout << "-> Sumar Matrices" << endl;
+					cout << "" << endl;
 					} break;
 			case 3: {
 
@@ -56,6 +58,9 @@ int main() {
 
 					} break;
 			case 9: {
+						for (int i = 0; i < matrices.size(); i++) {
+							matrices.erase(matrices.begin() + i);
+						}
 						cout << "Hasta Pronto!!" << endl;
 					} break;
 		}
