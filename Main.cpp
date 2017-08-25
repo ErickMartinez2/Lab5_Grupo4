@@ -1,10 +1,12 @@
 #include <iostream>
 #include <string>
+#include "Matriz.h"
+#include <vector>
 using namespace std;
 
 int main() {
 	int opcion;
-	
+	vector<int**> matrices;
 	do {
 		cout << "*** Calculadora Matricial ***" << endl
 			<< "1. Crear Matrices" << endl
@@ -20,7 +22,7 @@ int main() {
 		cin >> opcion;
 		switch (opcion) {
 			case 1:
-
+				
 				break;
 			case 2:
 
