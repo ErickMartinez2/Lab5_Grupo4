@@ -3,6 +3,10 @@
 #include <string>
 using namespace std;
 
+Matriz::Matriz() {
+
+}
+
 Matriz::Matriz(int height, int width, bool entrar) {
 	Pointer = new int*[height];
 	for (int i = 0;i<height;i++) {

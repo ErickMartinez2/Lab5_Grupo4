@@ -1,4 +1,5 @@
 #pragma once
+
 #include <iostream>
 #include <string>
 using namespace std;
@@ -36,6 +37,39 @@ class Matriz {
 			(*resp).setPointer(c);
 			return resp;
 		}
+		Matriz* operator-(Matriz Matriz2) {
+			Matriz* resp = new Matriz(this->getHeight(), this->getWidth(), false);
+			int** a = this->Pointer;
+			int** b = Matriz2.Pointer;
+			int** c = new int*[Height];
+			for (int i = 0;i<this->getHeight();i++) {
+				c[i] = new int [Width];
+			}
+	
+			for (int i = 0;i<this->getHeight();i++) {
+				for (int j = 0;j<this->getWidth();j++) {
+					c[i][j] = a[i][j] - b[i][j];
+				}
+			}
+			(*resp).setPointer(c);
+			return resp;
+		}
+		Matriz* operator-() {
+			int** a = this->Pointer;
+			Matriz* resp = new Matriz(this->getHeight(), this->getWidth(), false);
+			int** c = new int*[this->getHeight()];
+			for (int i = 0;i<this->getHeight();i++) {
+				c[i] = new int [this->getWidth()];
+			}
+			for (int i = 0;i<this->getHeight();i++) {
+				for (int j = 0;j<this->getWidth();j++) {
+					c[i][j] = a[i][j] * -1;
+				}
+			}
+			(*resp).setPointer(c);
+			return resp;
+		}
+
 		/*Matriz operator-(Matriz& Matriz2) {
 			Matriz resp(this->Height, this->Width);
 			if (true) {
