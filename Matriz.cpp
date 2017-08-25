@@ -17,7 +17,7 @@ Matriz::Matriz(int Height, int Width) {
 			Pointer[i][j] = Num;
 			contador++;
 		}
-	}
+	}	
 }	
 
 void Matriz::setHeight(int a) {
@@ -50,7 +50,7 @@ Matriz::~Matriz() {
 		if (Pointer[i]) {
 			delete Pointer[i];
 		}
-		
+
 		delete[] Pointer;
 
 	}

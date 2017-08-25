@@ -53,17 +53,38 @@ class Matriz {
 			}
 			return resp;
 		}
-		Matriz operator() {
-			int** trans = new int*[this->Width];
+		Matriz operator()() {
+			
+			int** transP = new int*[this->Width];
 			for (int i = 0;i<this->Width;i++) {
 				trans[i] = new int [Height];
 			}
 			for (int x=0; x < this->Height; x++) {
-      				for (int y=0; y < this->width; y++) {
-        				this->Pointer[y][x] = trans[x][y];
+      				for (int y=0; y < this->Width; y++) {
+        				this->Pointer[y][x] = transP[x][y];
 			      	}
     			}
-		return trans;		
+			this->setPointer(transP);
+			this->setHeight(Width);
+			this->setWidth(Height);
+			for (int i = 0;i<this->Height;i++) {
+				delete[] transP[i];
+			}
+			delete[] transP;
+			return this;
+		}
+		Matriz operator-(int Resta) {
+			Matriz resp (this->Height, this->Width);
+			int** RespP = new int*[Height];
+			for (int i = 0;i<this->Height;i++) {
+				RespP[i] = new int*[Width];
+			}
+			for (int i = 0;i<this->Height;i++) {
+				for (int j = 0;j<this->Width;j++) {
+					RespP[i][j] = (this->Pointer[i][j]) - Resta;
+				}
+			}
+			return resp;
 		}
 		
 	friend ostream& operator<<(ostream&, const Matriz&);*/
