@@ -10,6 +10,6 @@ class Imprimir {
 	public:
 		Imprimir();
 		~Imprimir();	
-		void Print(Matriz*, Matriz*, Matriz*);
-		//void Print(Matriz, Matriz);
+		void Print2(Matriz, Matriz, Matriz);
+		void Print(Matriz, Matriz);
 };

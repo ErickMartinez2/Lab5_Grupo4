@@ -56,7 +56,6 @@ int main() {
 						int opcion_matriz2;
 						cin >> opcion_matriz2;
 						Matriz* matriz2 = *matrices.at(opcion_matriz1) + *matrices.at(opcion_matriz2);
-						imprimir -> Print(matrices.at(opcion_matriz1), matrices.at(opcion_matriz2), matriz2);
 						cout << endl;
 						cout << "-> Matriz Resultado:" << endl;
 						for (int j = 0; j < (*matriz2).getHeight(); j++) {
@@ -65,7 +64,9 @@ int main() {
 							}
 							cout << endl;
 						}
-
+						imprimir -> Print(*matrices.at(opcion_matriz1), *matrices.at(opcion_matriz2));
+						//imprimir -> Print2(*matrices.at(opcion_matriz1), *matrices.at(opcion_matriz2), *matriz2);
+						
 					} break;
 			case 3: {
 						cout << "-> Menos Unario" << endl;
@@ -91,6 +92,7 @@ int main() {
 							}
 							cout << endl;
 						}
+						imprimir -> Print(*matrices[opcion_matriz], *matriz2);
 					}break;
 			case 4: {
 						cout << "-> Restar Matrices" << endl;
@@ -111,7 +113,6 @@ int main() {
 						int opcion_matriz2;
 						cin >> opcion_matriz2;
 						Matriz* matriz2 = *matrices.at(opcion_matriz1) - *matrices.at(opcion_matriz2);
-						imprimir -> Print(matrices.at(opcion_matriz1), matrices.at(opcion_matriz2), matriz2);
 						cout << endl;
 						cout << "-> Matriz Resultado:" << endl;
 						for (int j = 0; j < (*matriz2).getHeight(); j++) {
@@ -120,7 +121,9 @@ int main() {
 							}
 							cout << endl;
 						}
-					} break;
+						imprimir -> Print(*matrices.at(opcion_matriz1), *matrices.at(opcion_matriz2));
+						//imprimir -> Print2(*matrices.at(opcion_matriz1), *matrices.at(opcion_matriz2), *matriz2);
+						} break;
 			case 5: {
 
 					} break;
@@ -146,12 +149,12 @@ int main() {
 						cout << "Ingrese el numero de la segunda matriz: ";
 						int opcion_matriz2;
 						cin >> opcion_matriz2;
-						bool igual = *matrices.at(opcion_matriz1) == *matrices.at(opcion_matriz2);
+						/*bool igual = *matrices.at(opcion_matriz1) == *matrices.at(opcion_matriz2);
 						if (igual) {
 							cout << "Son iguales!!!" << endl;
 						} else {
 							cout << "No son iguales!!!" << endl;
-						}
+						}*/
 					} break;
 			case 8: {
 
