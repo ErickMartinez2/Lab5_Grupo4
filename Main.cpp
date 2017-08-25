@@ -6,7 +6,7 @@ using namespace std;
 
 int main() {
 	int opcion;
-	vector<int**> matrices;
+	vector<Matriz> matrices;
 	do {
 		cout << "*** Calculadora Matricial ***" << endl
 			<< "1. Crear Matrices" << endl
@@ -19,10 +19,20 @@ int main() {
 			<< "8. Inversa" << endl
 			<< "9. Salir" << endl
 			<< "Ingrese su opcion: ";
-		cin >> opcion;
+		cin >> oipcion;
+		cout << endl;
 		switch (opcion) {
 			case 1:
-				
+				cout << "-> Agregar Matrices" << endl;
+				cout << "Ingrese el numero de filas de la matriz: ";
+				int filas;
+				cin >> filas;
+				cout << "Ingrese el numero de columnas de la matriz: ";
+				int columnas;
+				cin >> columnas;
+				Matriz matriz(filas, columnas);
+				matrices.push_back(matriz);
+				cout << "Matriz Creada!" << endl;
 				break;
 			case 2:
 
