@@ -18,6 +18,13 @@ Matriz::Matriz(int Height, int Width) {
 			contador++;
 		}
 	}	
+}
+
+Matriz::Matriz(int** pointer) {
+		this->Pointer = new int*[pointer.getHeight];
+		for (int i = 0;i<pointer.getHeight();i++) {
+			Pointer[i] = new int [pointer.getWidth];
+		}
 }	
 
 void Matriz::setHeight(int a) {
