@@ -35,3 +35,25 @@ void Imprimir::Print(Matriz matA, Matriz matB, Matriz matC) {
 		writeFile << "\n";
 	}
 }
+void Imprimir::Print(Matriz matA, Matriz matB) {
+	int** PointA = matA.getPointer();
+	int** PointB = matB.getPointer();
+	int** PointC = matC.getPointer();
+	string FileName;
+	cout << "Ingrese el nombre del archivo: ";
+	cin >> FileName;	
+	ofstream writeFile(FileName.c_str());
+	for (int i = 0;i<matA.getHeight();i++) {
+		for (int j = 0;j<matA.getWidth();j++) {
+			writeFile << PointA[i][j];
+		}
+		writeFile << "\n";
+	}
+	writeFile << "================\n";
+	for (int i = 0;i<matB.getHeight();i++) {
+		for (int j = 0;j<matB.getWidth();j++) {
+			writeFile << PointB[i][j];
+		}
+		writeFile << "\n";
+	}
+}

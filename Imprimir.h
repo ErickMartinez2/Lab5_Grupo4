@@ -12,5 +12,5 @@ class Imprimir {
 		Matriz matC;
 	public:	
 		void Print(Matriz, Matriz, Matriz);
-		//void Print(Matriz, Matriz);
+		void Print(Matriz, Matriz);
 };
