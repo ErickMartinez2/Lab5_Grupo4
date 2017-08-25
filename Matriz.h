@@ -17,16 +17,22 @@ class Matriz {
 		int getWidth();
 		int** getPointer();
 		Matriz operator+(Matriz& Matriz2) {
-			int** a = this->Pointer;
-			int** b = Matriz2->Pointer;
-			Matriz resp(this->Height, this->Width);
-			for (int i = 0;i<Matriz.getHeight;i++) {
-				for (int j = 0;j<Matriz.getWidth;j++) {
-					resp[i][j] = a[i][j] + b[i][j];
+			if (true) {
+				int** a = this->Pointer;
+				int** b = Matriz2.Pointer;
+				int** c = new int*[Height];
+				for (int i = 0;i<this->getHeight();i++) {
+					c[i] = new int [Width];
 				}
-			}	
-			Matriz resp();
+				Matriz resp(this->Height, this->Width);
+				for (int i = 0;i<this->getHeight();i++) {
+					for (int j = 0;j<this->getWidth();j++) {
+						c[i][j] = a[i][j] + b[i][j];
+					}
+				}
+				resp.setPointer(c);
+			}
 			return resp;
 		}
-	friend ostream& operator<<(ostream&, const Integer&);
+	friend ostream& operator<<(ostream&, const Matriz&);
 };

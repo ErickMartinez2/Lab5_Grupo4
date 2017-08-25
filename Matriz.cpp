@@ -8,7 +8,7 @@ using namespace std;
 			Pointer[i] = new int [Width];
 		}
 		for (int i = 0;i<Height;i++) {
-			for (int j = 0;i<Width;j+) {
+			for (int j = 0;i<Width;j++) {
 				int Num;				
 				cin >> Num;
 				Pointer[i][j] = Num;
